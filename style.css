@@ -1,0 +1,100 @@
+:root {
+  --bg: #c6f2ff;
+  --card: #7ab4d8;
+  --ink: #000000;
+  --max-width: 1280px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Gilda Display", "Helvetica", serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1;
+}
+
+.page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg);
+}
+
+.hero {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5.47% 0;
+}
+
+.title-card {
+  margin: 0 4.61%;
+  padding: 2.5rem 1rem;
+  background-color: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title-card h1 {
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.members-grid {
+  margin: 6% 5.47% 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem 9%;
+}
+
+.member-card {
+  background-color: var(--card);
+  padding: 2.25rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(32px, 5vw, 60px);
+  letter-spacing: 0;
+  line-height: 1.1;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.member-card:hover,
+.member-card:focus {
+  transform: translateY(-4px);
+  background-color: #6aa6cc;
+}
+
+.member-card.solo {
+  margin: 4.5% auto 0;
+  width: 50%;
+}
+
+@media (max-width: 720px) {
+  .members-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .member-card.solo {
+    width: 80%;
+  }
+}
